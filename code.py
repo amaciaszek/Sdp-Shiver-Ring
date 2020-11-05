@@ -18,6 +18,7 @@ mpu = adafruit_mpu6050.MPU6050(i2c)
 blocksize = 0
 delay_length = 0.01
 samples = []
+data=[]
 gc.enable()
 while True:
     lastButtonState = currentButtonState
@@ -25,6 +26,9 @@ while True:
 
     if lastButtonState is True and currentButtonState is False:
         if calculating is True:
+            with open('datafile.txt', 'w') as filehandle:
+                for listitem in data:
+                    filehandle.write('%s\n' % listitem)
             calculating = False
         else:
             calculating = True
@@ -41,7 +45,8 @@ while True:
                 maxid = maxid + 0.5
             period= 1/(maxid/(256*(delay_length+0.0051)))
             freq= 1.369567297*pow(period,-1.001297824)
-            print(round(freq, 1))
+            #print(round(freq, 1))
+            data.append(str(time.monotonic())+","+str(round(freq, 1)))
             test_fft = []
             samples = []
             gc.collect()
@@ -53,5 +58,3 @@ while True:
             blocksize=blocksize+1
 
     time.sleep(delay_length)
-
-
