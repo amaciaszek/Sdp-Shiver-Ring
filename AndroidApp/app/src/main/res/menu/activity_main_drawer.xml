@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_calender"
+                android:icon="@drawable/ic_menu_calender"
+                android:title="@string/menu_calender"/>
+    </group>
+
+    <item android:title="Communication">
+        <menu>
+            <item
+                    android:id="@+id/nav_bluetooth"
+                    android:icon="@drawable/ic_menu_bluetooth"
+                    android:title="@string/menu_bluetooth"/>
+            <item
+                    android:id="@+id/nav_sms"
+                    android:icon="@drawable/ic_menu_sms_settings"
+                    android:title="@string/menu_sms"/>
+        </menu>
+    </item>
+
+</menu>
