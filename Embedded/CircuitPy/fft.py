@@ -54,8 +54,12 @@ def fft(x):
     even = fft(list(islice(x,0,N,2)))
     odd =  fft(list(islice(x,1,N,2)))
     T = [cos(2*pi*k/N)*odd[k].real+sin(2*pi*k/N)*odd[k].imag + (cos(2*pi*k/N)*odd[k].imag-sin(2*pi*k/N)*odd[k].real)*1j for k in range(N//2)]
-    return [even[k].real + T[k].real + (even[k].imag + T[k].imag)*1j for k in range(N//2)] + \
+    output=[even[k].real + T[k].real + (even[k].imag + T[k].imag)*1j for k in range(N//2)] + \
            [even[k].real - T[k].real + (even[k].imag - T[k].imag)*1j for k in range(N//2)]
+    even=[]
+    odd=[]
+    T=[]
+    return output
 
 #Computes the complex inverse fft of the input array needs to be power of 2 length to work
 #not the most efficiant but uses the same fft code.
