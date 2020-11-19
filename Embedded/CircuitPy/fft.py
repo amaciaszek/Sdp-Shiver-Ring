@@ -85,4 +85,3 @@ def spectrogram(x):
         else:
             temp_list.append(0)
     return temp_list
-
