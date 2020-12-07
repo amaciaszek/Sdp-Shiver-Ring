@@ -47,7 +47,7 @@ class SMSActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
         val sendSMSButton: Button = findViewById(R.id.sms_button)
         sendSMSButton.setOnClickListener{
             val SMSMan:SmsManager = SmsManager.getDefault()
-            SMSMan.sendTextMessage("14136825761", null, "EMERGENCY! Shiver-Ring has detected a dangerous situation. \n Please check on ", null,null)
+            SMSMan.sendTextMessage("14136825761", null, "EMERGENCY! Shiver-Ring has detected a dangerous situation. \n Please check on ", null,null) // Noh's
         }
     }
 
