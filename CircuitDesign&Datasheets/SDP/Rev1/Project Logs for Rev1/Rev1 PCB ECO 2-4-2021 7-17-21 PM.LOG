@@ -1,0 +1,33 @@
+Change Component Designator: OldDesignator=Accelerometer NewDesignator=Accelerometer?
+Change Component Designator: OldDesignator=DG NewDesignator=D?
+Change Component Designator: OldDesignator=DR NewDesignator=DS?
+Added Component: Designator=U?(RHA0040H_V)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.ti.com/lit/ds/symlink/cc2540.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.ti.com/lit/ml/mpqf135c/mpqf135c.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "SWRS084F"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Type"; Value = "Wireless MCU"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Flash Size (KB)"; Value = "256"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "40-Pin Plastic Quad Flatpack No-Lead, Body 6 x 6 mm, Pitch 0.5 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "RHA0040H"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "4204276/E"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packing"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "CC2540F256RHAT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RAM Size (KB)"; Value = "8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RX Current (Lowest) (mA)"; Value = "19.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sensitivity (Best) (dBm)"; Value = "-93"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standby Current (uA)"; Value = "0.4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range"; Value = "-40 to 85 degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wakeup Time (PD-->RX/TX) (us)"; Value = "530"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=SdpSchemRev1 Member=Component Accelerometer? MPU6050
+Added Member To Class: ClassName=SdpSchemRev1 Member=Component D? LTST-C190GKT
+Added Member To Class: ClassName=SdpSchemRev1 Member=Component DS? HSMS-C190
+Added Member To Class: ClassName=Sheet1 Member=Component U? CC2540F256RHAT
+Added Room: Name=SdpSchemRev1
+Added Room: Name=Sheet1
