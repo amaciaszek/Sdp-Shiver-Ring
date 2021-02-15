@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=Net3.3V Converter_3 Pin=BLE !RESET-2
+Removed Pin From Net: NetName=NetC14_1 Pin=Charging Controller-8
+Removed Pin From Net: NetName=Net3.3V Converter_4 Pin=QSPI Flash-4
+Removed Pin From Net: NetName=Net3.3V Converter_3 Pin=QSPI Flash-8
+Removed Pin From Net: NetName=NetC14_1 Pin=R4-2
+Removed Pin From Net: NetName=NetU1_35 Pin=U-1
+Removed Pin From Net: NetName=NetU1_36 Pin=U-2
+Removed Pin From Net: NetName=NetU1_43 Pin=U-3
+Removed Pin From Net: NetName=NetU1_44 Pin=U-4
+Removed Pin From Net: NetName=Net3.3V Converter_3 Pin=U-9
+Removed Pin From Net: NetName=Net3.3V Converter_4 Pin=U-12
+Removed Pin From Net: NetName=NetC14_1 Pin=USB-5
+Added Pin To Net: NetName=NetCharging Controller_8 Pin=Charging Controller-8
+Added Pin To Net: NetName=NetCharging Controller_8 Pin=R4-2
+Added Pin To Net: NetName=NetCharging Controller_8 Pin=USB-5
+Added Net: Name=NetCharging Controller_8
+Added Pin To Net: NetName=NetU1_23 Pin=U1-23
+Added Net: Name=NetU1_23
+Added Pin To Net: NetName=NetU1_24 Pin=U1-24
+Added Net: Name=NetU1_24
+Change Class Name : Old Net Name=U_SdpSchemRev1 New Net Name=SdpSchemRev1
+Added Room: Name=SdpSchemRev1

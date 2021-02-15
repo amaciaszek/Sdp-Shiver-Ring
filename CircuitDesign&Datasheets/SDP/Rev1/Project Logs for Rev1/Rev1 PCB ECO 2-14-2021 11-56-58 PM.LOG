@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=NetC14_1 Pin=Charging Controller-8
+Removed Pin From Net: NetName=NetC14_1 Pin=R4-2
+Removed Pin From Net: NetName=NetC14_1 Pin=USB-5
+Change Component Comment : Designator=QSPI Flash Old Comment=GD25Q16  New Comment=GD25Q16
+Added Pin To Net: NetName=NetCharging Controller_8 Pin=Charging Controller-8
+Added Pin To Net: NetName=NetCharging Controller_8 Pin=R4-2
+Added Pin To Net: NetName=NetCharging Controller_8 Pin=USB-5
+Added Net: Name=NetCharging Controller_8
+Change Class Name : Old Net Name=SdpSchemRev1 New Net Name=U_SdpSchemRev1
+Added Class: Name=Sheet1
+Added Room: Name=Sheet1
+Added Room: Name=U_SdpSchemRev1
