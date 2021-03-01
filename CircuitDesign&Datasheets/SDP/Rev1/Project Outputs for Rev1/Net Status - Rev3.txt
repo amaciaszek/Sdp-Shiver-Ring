@@ -1,0 +1,44 @@
+Net Status Report
+Filename     : C:\Users\conno\Desktop\Sdp-Shiver-Ring\CircuitDesign&Datasheets\SDP\Rev1\Rev3.PcbDoc
+Date         : 2/28/2021
+Time         : 5:47:45 PM
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    Net3.3V Converter_1, Signal Layers Only, 0mils
+    Net3.3V Converter_3, Signal Layers Only, 0mils
+    Net3.3V Converter_4, Signal Layers Only, 0mils
+    NetAccelerometer_20, Signal Layers Only, 0mils
+    NetAccelerometer_23, Signal Layers Only, 0mils
+    NetAccelerometer_24, Signal Layers Only, 0mils
+    NetAccelerometer_8, Signal Layers Only, 0mils
+    NetBLE !RESET_1, Signal Layers Only, 0mils
+    NetC10_2, Signal Layers Only, 0mils
+    NetC11_2, Signal Layers Only, 0mils
+    NetC14_1, Signal Layers Only, 0mils
+    NetC14_2, Signal Layers Only, 0mils
+    NetC9_2, Signal Layers Only, 0mils
+    NetCharging Controller_1, Signal Layers Only, 0mils
+    NetCharging Controller_12, Signal Layers Only, 0mils
+    NetCharging Controller_16, Signal Layers Only, 0mils
+    NetCharging Controller_5, Signal Layers Only, 0mils
+    NetCharging Controller_7, Signal Layers Only, 0mils
+    NetCharging Controller_8, Signal Layers Only, 0mils
+    NetCharging Controller_9, Signal Layers Only, 0mils
+    NetL1_2, Signal Layers Only, 0mils
+    NetQSPI Flash_1, Signal Layers Only, 0mils
+    NetQSPI Flash_2, Signal Layers Only, 0mils
+    NetQSPI Flash_3, Signal Layers Only, 0mils
+    NetQSPI Flash_5, Signal Layers Only, 0mils
+    NetQSPI Flash_6, Signal Layers Only, 0mils
+    NetQSPI Flash_7, Signal Layers Only, 0mils
+    NetR2_1, Signal Layers Only, 0mils
+    NetR5_2, Signal Layers Only, 0mils
+    NetSW1_3, Signal Layers Only, 0mils
+    NetU1_35, Signal Layers Only, 0mils
+    NetU1_36, Signal Layers Only, 0mils
+    NetU1_43, Signal Layers Only, 0mils
+    NetU1_44, Signal Layers Only, 0mils
+    NetU1_45, Signal Layers Only, 0mils
+    NetU1_46, Signal Layers Only, 0mils
+count : 36

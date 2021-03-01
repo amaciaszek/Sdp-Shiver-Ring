@@ -1,2 +1,5 @@
-Record=TopLevelDocument|FileName=Accelerometer.SchDoc
-Record=SheetSymbol|SourceDocument=Accelerometer.SchDoc|Designator=U_SdpSchemRev1|SchDesignator=U_SdpSchemRev1|FileName=SdpSchemRev1.SchDoc|SymbolType=Normal|RawFileName=SdpSchemRev1.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=TopLevelDocument|FileName=Accelerometer.SchDoc|SheetNumber= 
+Record=SheetSymbol|SourceDocument=Accelerometer.SchDoc|Designator=U_SdpSchemRev1|SchDesignator=U_SdpSchemRev1|FileName=SdpSchemRev1.SchDoc|SheetNumber=1|SymbolType=Normal|RawFileName=SdpSchemRev1.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=NoMainPathDocument|SourceDocument=Accelerometer.SchDoc|FileName=BLE.SchDoc|SheetNumber= 
+Record=NoMainPathDocument|SourceDocument=Accelerometer.SchDoc|FileName=ChargingController.SchDoc|SheetNumber= 
+Record=NoMainPathDocument|SourceDocument=Accelerometer.SchDoc|FileName=SWD.SchDoc|SheetNumber= 
