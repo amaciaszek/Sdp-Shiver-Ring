@@ -1,0 +1,172 @@
+Removed Pin From Net: NetName=NetCCC1_2 Pin=CCC1-2
+Removed Pin From Net: NetName=NetCCR1_1 Pin=CCR1-1
+Removed Pin From Net: NetName=NetCCR2_1 Pin=CCR2-1
+Removed Pin From Net: NetName=Net3.3v_4 Pin=CCR2-2
+Removed Pin From Net: NetName=NetCCR2_1 Pin=CCR3-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=CCR4-1
+Removed Pin From Net: NetName=NetCCR4_2 Pin=CCR4-2
+Removed Pin From Net: NetName=NetCCR5_2 Pin=CCR5-2
+Removed Pin From Net: NetName=NetCCR1_1 Pin=Charging Controller?-5
+Removed Pin From Net: NetName=NetCCR5_2 Pin=Charging Controller?-8
+Removed Pin From Net: NetName=NetCCR4_2 Pin=Charging Controller?-16
+Removed Pin From Net: NetName=Net3.3v_4 Pin=DG-1
+Removed Pin From Net: NetName=NetCharging Controller?_7 Pin=DG-2
+Removed Pin From Net: NetName=NetCharging Controller?_9 Pin=DR-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=DR-5
+Removed Pin From Net: NetName=NetCCR5_2 Pin=USB-5
+Change Component Designator: OldDesignator=BLERESET NewDesignator=BLESW2
+Change Component Designator: OldDesignator=PMC2 NewDesignator=C?
+Added Component: Designator=CCC1(CAPC2013X145X50ML20T25)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "C0805C475K8PACTU"; VariantName = "[No Variations]"
+Added Component: Designator=CCC2(CAPC2013X145X50ML20T25)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "C0805C475K8PACTU"; VariantName = "[No Variations]"
+Added Component: Designator=CCC3(FP-CL10-IPC_C)
+Add component (AddParameter): Name = "Capacitance"; Value = "1uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "1608"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "0.8mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X5R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.8mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1.6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness"; Value = "0.035inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.031inch"; VariantName = "[No Variations]"
+Added Component: Designator=CCR1(RESC1005X40X25NL05T10)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Panasonic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "ERJ-U02F1501X"; VariantName = "[No Variations]"
+Added Component: Designator=CCR2(RESC1005X40X25NL05T10)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Panasonic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "ERJ-U02F1501X"; VariantName = "[No Variations]"
+Added Component: Designator=CCR3(FP-RN731E-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Res"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7F1773270%7FP%7Fpdf%7FEnglish%7FENG_DS_1773270_P.pdf%7F1-1879132-6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thin Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Passive Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Chip SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.35mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ipc Land Pattern Name"; Value = "RESC10050X30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RN73C1E1K13BTG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/rn73c1e1k13btg-te+connectivity-42626925"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "octopart_url"; Value = "https://octopart.com/rn73c1e1k13btg-te+connectivity-42626925"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "RN731E"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "packaging"; Value = "250 cut tape length"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "0.063W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "1.13KO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "RN73"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-55°C to +155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "10ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "0.1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1.13KO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "25V"; VariantName = "[No Variations]"
+Added Component: Designator=CCR4(FP-CRCW0603-e3-IPC_B)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "1608"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thick Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "0.85mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Automotive AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.02inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1.55mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "100mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Military Standard"; Value = "Not"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "10000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "100mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "10kR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "200ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "75V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "75V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "7.1E-05oz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.85mm"; VariantName = "[No Variations]"
+Added Component: Designator=CCR5(FP-RC1005-IPC_A)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "1005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thick Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "0.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Moisture Resistant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.016inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "63mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Military Standard"; Value = "Not"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "63mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "1.18kR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "100ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.02inch"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Net3.3v_4 Pin=CCC1-1
+Added Pin To Net: NetName=NetCCC1_2 Pin=CCC1-2
+Added Pin To Net: NetName=Net3.3v_4 Pin=CCC2-1
+Added Pin To Net: NetName=NetBattery Terminal_1 Pin=CCC2-2
+Added Pin To Net: NetName=Net3.3v_4 Pin=CCC3-2
+Added Pin To Net: NetName=NetCCR1_1 Pin=CCR1-1
+Added Pin To Net: NetName=NetCCC1_2 Pin=CCR1-2
+Added Pin To Net: NetName=NetCCR2_1 Pin=CCR2-1
+Added Pin To Net: NetName=NetCCC1_2 Pin=CCR2-2
+Added Pin To Net: NetName=Net3.3v_4 Pin=CCR3-1
+Added Pin To Net: NetName=Net3.3v_4 Pin=CCR4-1
+Added Pin To Net: NetName=NetCCR4_2 Pin=CCR4-2
+Added Pin To Net: NetName=Net3.3v_4 Pin=CCR5-1
+Added Pin To Net: NetName=NetCCR5_2 Pin=CCR5-2
+Added Pin To Net: NetName=NetCCR4_2 Pin=Charging Controller?-1
+Added Pin To Net: NetName=Net3.3v_4 Pin=Charging Controller?-5
+Added Pin To Net: NetName=NetCCC1_2 Pin=Charging Controller?-6
+Added Pin To Net: NetName=Net3.3v_4 Pin=Charging Controller?-8
+Added Pin To Net: NetName=NetCCR5_2 Pin=Charging Controller?-12
+Added Pin To Net: NetName=Net3.3v_4 Pin=Charging Controller?-14
+Added Pin To Net: NetName=NetCharging Controller?_7 Pin=DG-1
+Added Pin To Net: NetName=NetCCR2_1 Pin=DG-2
+Added Pin To Net: NetName=NetCCR1_1 Pin=DR-2
+Added Pin To Net: NetName=NetCharging Controller?_9 Pin=DR-5
+Added Pin To Net: NetName=Net3.3v_4 Pin=USB-5
+Added Pin To Net: NetName=NetCCC3_1 Pin=CCC3-1
+Added Pin To Net: NetName=NetCCC3_1 Pin=Charging Controller?-13
+Added Pin To Net: NetName=NetCCC3_1 Pin=USB-1
+Added Net: Name=NetCCC3_1
+Added Pin To Net: NetName=NetCCR3_2 Pin=CCR3-2
+Added Pin To Net: NetName=NetCCR3_2 Pin=Charging Controller?-16
+Added Net: Name=NetCCR3_2
+Added Member To Class: ClassName=U_Charging Member=Component CCC2 C0805C475K8PACTU
+Added Member To Class: ClassName=U_Charging Member=Component CCC3 CL10A105KP8NNNC
+Added Room: Name=U_ACCELEROMETER
+Added Room: Name=U_Charging
+Added Room: Name=U_FLASH_BLE
+Added Room: Name=U_Power management
+Added Room: Name=U_SOC
+Added Room: Name=U_SPEAKER
+Added Room: Name=U_SWD
