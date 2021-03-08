@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetBLE_2 Pin=U?-36
+Removed Pin From Net: NetName=NetBLE_3 Pin=U?-43
+Added Pin To Net: NetName=NetBLE_3 Pin=U?-36
+Added Pin To Net: NetName=NetBLE_2 Pin=U?-43
+Added Member To Class: ClassName=U_Charging Member=Component CCC1 C0805C475K8PACTU
+Added Member To Class: ClassName=U_Charging Member=Component CCR1 ERJ-U02F1501X
+Added Member To Class: ClassName=U_Charging Member=Component CCR2 ERJ-U02F1501X
+Added Member To Class: ClassName=U_Charging Member=Component CCR3 RN73C1E1K13BTG
+Added Member To Class: ClassName=U_Charging Member=Component CCR4 CRCW060310K0JNEB
+Added Member To Class: ClassName=U_Charging Member=Component CCR5 RC1005F1181CS
+Added Room: Name=U_Charging

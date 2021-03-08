@@ -210,7 +210,7 @@ GenerateClassCluster=0
 DocumentUniqueId=LXIYLBSM
 
 [Document11]
-DocumentPath=Project Outputs for Rev3\CAMtastic1.Cam
+DocumentPath=Project Outputs for Rev3\CAMtastic3.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -227,7 +227,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document12]
-DocumentPath=Project Outputs for Rev3\CAMtastic2.Cam
+DocumentPath=Project Outputs for Rev3\CAMtastic1.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
