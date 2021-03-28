@@ -1,0 +1,5 @@
+1. Get Arduino IDE from Microsoft store
+2. File--> Preferences, add this "https://adafruit.github.io/arduino-board-index/package_adafruit_index.json" to Additional board manager URL's
+3. Tools--> Board Manager --> Look for SAMD with M4 support (v1.6.6 as of 03/2021) and install
+4. Sketch--> Include Library --> Add zip library of all zips in libraries.7z
+5. Paste in RTOS text file and build
