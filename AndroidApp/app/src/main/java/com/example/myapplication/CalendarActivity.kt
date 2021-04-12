@@ -64,12 +64,8 @@ class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.nav_calender -> {
                 // Do nothing
             }
-            R.id.nav_bluetooth -> {
-                val bluetoothIntent = Intent(applicationContext, BluetoothActivity::class.java)
-                startActivity(bluetoothIntent)
-            }
-            R.id.nav_sms -> {
-                val smsIntent = Intent(applicationContext, SMSActivity::class.java)
+            R.id.nav_smsbluetooth -> {
+                val smsIntent = Intent(applicationContext, SMSBluetoothActivity::class.java)
                 startActivity(smsIntent)
             }
         }

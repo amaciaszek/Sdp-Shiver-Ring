@@ -25,8 +25,10 @@ int16_t gx, gy, gz;
 //**************************************************************************
 TaskHandle_t Handle_aTask;
 TaskHandle_t Handle_bTask;
+TaskHandle_t Handle_cTask;
 TaskHandle_t Handle_monitorTask;
 bool sendEmergencyText = false;
+bool raiseAlarm = false;
 
 struct complexNum {
   double r;
@@ -218,7 +220,7 @@ static void threadA( void *pvParameters )
   if(freqx > 7.7 && freqx < 12.3){threshold=threshold+1;SERIAL.print(" X is bad \n");}
   if(freqy > 7.7 && freqy < 12.3){threshold=threshold+1;SERIAL.print(" Y is bad \n");}
   if(freqz > 7.7 && freqz < 12.3){threshold=threshold+1;SERIAL.print(" Z is bad \n");}
-  if(threshold > 5){sendEmergencyText=true; threshold=0;SERIAL.print(" Alert Raised! ");}
+  if(threshold > 5){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
   myDelayMs(100);
   
   }
@@ -278,6 +280,52 @@ static void threadB( void *pvParameters )
   SERIAL.println("Alert Thread:Exiting\n");
   SERIAL.flush();
   vTaskDelete( NULL );
+}
+
+static void threadC( void *pvParameters ){
+  int msresetcount=0;
+  int msalarmcount=0;
+ 
+  myDelayMs(2000);
+ 
+  while(1)
+  {
+    if(raiseAlarm == true)
+    {
+       SERIAL.println("\nSTARTING ALARM\n");
+       digitalWrite(7, HIGH);   // turn the LED on (HIGH is the voltage level)
+       while(raiseAlarm == true)
+       {
+          int buttonState = digitalRead(6);
+          if(buttonState == HIGH){
+            msresetcount = msresetcount + 1;
+            msalarmcount = msalarmcount + 1;
+            myDelayMs(1);
+          }
+          else
+          {
+            msresetcount=0;
+            msalarmcount = msalarmcount + 1;
+            myDelayMs(1);
+          }
+          if(msresetcount >= 1000)
+          {
+            raiseAlarm=false;
+            msresetcount=0;
+            msalarmcount=0;
+            digitalWrite(7, LOW);   // turn the LED on (HIGH is the voltage level)
+            SERIAL.println("\nEnding Alarm\n");
+          }
+          if(msalarmcount >= 9000)
+          {
+            sendEmergencyText = true;
+            myDelayMs(1);
+          }
+       }
+    }
+    myDelayMs(1000);
+  }
+  
 }
 
 //*****************************************************************
@@ -364,6 +412,9 @@ void setup()
   delay(1000); // prevents usb driver crash on startup, do not omit this
   while (!SERIAL) ;  // Wait for serial terminal to open port before starting program
 
+  pinMode(7, OUTPUT);
+  pinMode(6, INPUT);
+  
   // show the amount of ram free at startup
   /*printRamFree();*/
   
@@ -392,6 +443,7 @@ void setup()
   // Also initializes a handler pointer to each task, which are important to communicate with and retrieve info from tasks
   xTaskCreate(threadA,     "Task A",       1512, NULL, tskIDLE_PRIORITY + 3, &Handle_aTask);
   xTaskCreate(threadB,     "Task B",       256, NULL, tskIDLE_PRIORITY + 2, &Handle_bTask);
+  xTaskCreate(threadC,     "Task C",       256, NULL, tskIDLE_PRIORITY + 1, &Handle_cTask);
   /*xTaskCreate(taskMonitor, "Task Monitor", 256, NULL, tskIDLE_PRIORITY + 1, &Handle_monitorTask);*/
 
   // show the amount of ram free after initializations

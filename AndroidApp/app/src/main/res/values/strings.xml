@@ -8,9 +8,13 @@
     <string name="action_settings">App Settings</string>
 
     <string name="menu_calender">Event Tracker</string>
-    <string name="menu_bluetooth">Bluetooth</string>
-    <string name="menu_sms">SMS Setup</string>
+    <string name="menu_smsbluetooth">SMS + Bluetooth</string>
     <string name="content_main_description">Welcome to Shiver-Ring! \n Please make sure your bluetooth device is connected and charged.</string>
+    <string name="button_connect_bluetooth">Connect Bluetooth</string>
     <string name="button_send_sms">Send SMS</string>
+    <string name="unknown_device">Device Unknown</string>
+    <string name="found_ble_device">Found BLE device</string>
+    <string name="found_ble_devices">Found BLE devices</string>
+    <string name="ble_device_scan_failed">"Scan Failed with error code "</string>
 
 </resources>
