@@ -154,7 +154,8 @@ void printRamFree()
 //*****************************************************************
 static void threadA( void *pvParameters ) 
 {
-  int threshold =0;
+  int blocknum = 0;
+  int threshold = 0;
   while(1){
   int N = 1024;
   complexNum* buff_x;
@@ -217,12 +218,13 @@ static void threadA( void *pvParameters )
   delete[] spectrum_out_z;
   delete[] spectrum_out_y;
   SERIAL.println("\nDetection:");
-  if(freqx > 7.7 && freqx < 12.3){threshold=threshold+1;SERIAL.print(" X is bad \n");}
-  if(freqy > 7.7 && freqy < 12.3){threshold=threshold+1;SERIAL.print(" Y is bad \n");}
-  if(freqz > 7.7 && freqz < 12.3){threshold=threshold+1;SERIAL.print(" Z is bad \n");}
-  if(threshold > 5){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
-  myDelayMs(100);
-  
+  blocknum=blocknum+1;
+  if(freqx > 7.7 && freqx < 12.3){threshold=threshold+1;SERIAL.print(" X is bad ");}
+  if(freqy > 7.7 && freqy < 12.3){threshold=threshold+1;SERIAL.print(" Y is bad ");}
+  if(freqz > 7.7 && freqz < 12.3){threshold=threshold+1;SERIAL.print(" Z is bad ");}
+  if(blocknum > 2){blocknum=0;threshold=0;}
+  if(threshold > 4){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
+  //myDelayMs(100);
   }
   
   myDelayMs(500);
