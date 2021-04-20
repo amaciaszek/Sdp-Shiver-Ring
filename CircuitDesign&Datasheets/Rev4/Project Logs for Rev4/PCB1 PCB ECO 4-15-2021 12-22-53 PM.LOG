@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=Net3.3v_4 Pin=AC2-1
+Added Room: Name=U_ACCELEROMETER
+Added Room: Name=U_Charging
+Added Room: Name=U_FLASH_BLE
+Added Room: Name=U_Power management
+Added Room: Name=U_SOC
+Added Room: Name=U_SPEAKER
+Added Room: Name=U_SWD

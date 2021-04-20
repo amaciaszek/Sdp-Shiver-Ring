@@ -1,0 +1,21 @@
+Added Pin To Net: NetName=Net3.3v_4 Pin=BLE-12
+Added Pin To Net: NetName=Net3.3v_4 Pin=BLER-2
+Added Pin To Net: NetName=Net3.3v_4 Pin=QSPI-4
+Change Net Name : Old Net Name=NetBLER2_2 New Net Name=NetM4_24
+Change Net Name : Old Net Name=NetMOSFET_1 New Net Name=NetM4_25
+Change Net Name : Old Net Name=NetQSPI_2 New Net Name=NetM4_18
+Change Net Name : Old Net Name=NetQSPI_3 New Net Name=NetM4_19
+Change Net Name : Old Net Name=NetQSPI_5 New Net Name=NetM4_17
+Change Net Name : Old Net Name=NetQSPI_6 New Net Name=NetM4_23
+Change Net Name : Old Net Name=NetQSPI_7 New Net Name=NetM4_20
+Change Net Name : Old Net Name=NetSW3_3 New Net Name=NetM4_28
+Change Net Name : Old Net Name=NetU?_45 New Net Name=NetM4_45
+Change Net Name : Old Net Name=NetU?_46 New Net Name=NetM4_46
+Added Member To Class: ClassName=U_FLASH_BLE Member=Component QSPI GD25Q16
+Added Room: Name=U_ACCELEROMETER
+Added Room: Name=U_Charging
+Added Room: Name=U_FLASH_BLE
+Added Room: Name=U_Power management
+Added Room: Name=U_SOC
+Added Room: Name=U_SPEAKER
+Added Room: Name=U_SWD

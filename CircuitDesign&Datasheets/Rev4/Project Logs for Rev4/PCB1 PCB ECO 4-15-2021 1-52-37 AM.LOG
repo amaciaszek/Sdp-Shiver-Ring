@@ -1,0 +1,38 @@
+Removed Pin From Net: NetName=NetBLE_2 Pin=U?-43
+Removed Pin From Net: NetName=NetBLE_4 Pin=U?-44
+Added Component: Designator=BLER2(RESC1812(4532)_M)
+Add component (AddParameter): Name = "Case-EIA"; Value = "1812"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case-Metric"; Value = "4532"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.75 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1000.00 Ohm"; VariantName = "[No Variations]"
+Added Component: Designator=BLESW1(ITT-PTS645S-4_V)
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://datasheet.ciiva.com/29903/getdatasheetpartid-786341-29903846.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "Feb-14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "ITT Cannon"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ittcannon.com/"; VariantName = "[No Variations]"
+Added Component: Designator=BLESW2(ITT-PTS645S-4_V)
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://datasheet.ciiva.com/29903/getdatasheetpartid-786341-29903846.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "Feb-14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "ITT Cannon"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.ittcannon.com/"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetBLER2_1 Pin=BLER2-1
+Added Pin To Net: NetName=Net3.3v_3 Pin=BLER2-2
+Added Pin To Net: NetName=NetBLER_1 Pin=BLESW1-2
+Added Pin To Net: NetName=NetBLE_16 Pin=BLESW1-3
+Added Pin To Net: NetName=Net3.3v_4 Pin=BLESW2-2
+Added Pin To Net: NetName=NetBLE_11 Pin=BLESW2-3
+Added Pin To Net: NetName=NetBLER2_1 Pin=BLESW2-4
+Added Pin To Net: NetName=NetBLE_4 Pin=U?-43
+Added Pin To Net: NetName=NetBLE_2 Pin=U?-44
+Added Member To Class: ClassName=U_FLASH_BLE Member=Component BLER2 1K 1% 1812(4532)
+Added Member To Class: ClassName=U_FLASH_BLE Member=Component BLESW1 PTS645SM43SMTR92LFS
+Added Member To Class: ClassName=U_FLASH_BLE Member=Component BLESW2 PTS645SM43SMTR92LFS
+Added Room: Name=U_ACCELEROMETER
+Added Room: Name=U_Charging
+Added Room: Name=U_FLASH_BLE
+Added Room: Name=U_Power management
+Added Room: Name=U_SOC
+Added Room: Name=U_SPEAKER
+Added Room: Name=U_SWD

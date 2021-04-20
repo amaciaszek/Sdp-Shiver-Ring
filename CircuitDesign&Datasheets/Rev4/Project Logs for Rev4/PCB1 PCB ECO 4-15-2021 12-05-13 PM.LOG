@@ -1,0 +1,31 @@
+Removed Pin From Net: NetName=Net3.3v_4 Pin=AC2-1
+Change Component Footprint: Designator=AC2 Old Footprint=CAPC2013X135X45ML10T25 New Footprint=CAPC0805(2012)145_L
+Change Component Comment : Designator=AC2 Old Comment=GRM21BR61E106KA73L New Comment=
+Change Managed Component Library Link : Designator=AC2 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=501E2D9C-4BE3-4844-92AF-0A039EC046A2 New ItemGUID=0A0DFBFB-00FE-4BB9-9E7C-B6C2E2D1AF21 Old RevisionGUID=2B036562-6D79-4C11-83E5-A5D35C680386 New RevisionGUID=E18EFEA1-E74D-4557-B64F-707562C684DC
+Change component parameters: Designator = "AC2" ("AC2"); Footprint = "CAPC2013X135X45ML10T25"; UniqueID = "\UJQLVJZF\FMPRVKKH" ("\UJQLVJZF\FMPRVKKH")
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "2012"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Thickness"; Value = "1.45 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "50 V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Component: Designator=AC4(CAPC0805(2012)145_L)
+Add component (AddParameter): Name = "Case-EIA"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case-Metric"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Thickness"; Value = "1.45 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "50 V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetCCC1_2 Pin=3.3v-1
+Added Pin To Net: NetName=Net3.3v_4 Pin=AC4-1
+Added Pin To Net: NetName=Net3.3v_4 Pin=Accelerometer?-18
+Added Pin To Net: NetName=Net3.3v_4 Pin=Charging Controller?-17
+Added Pin To Net: NetName=Net3.3v_4 Pin=Charging Controller?-17
+Added Pin To Net: NetName=NetCCC1_2 Pin=PMC2-2
+Change Net Name : Old Net Name=NetCCC1_2 New Net Name=Net3.3v_1
+Added Pin To Net: NetName=NetAC4_2 Pin=AC4-2
+Added Pin To Net: NetName=NetAC4_2 Pin=Accelerometer?-10
+Added Net: Name=NetAC4_2
+Added Member To Class: ClassName=U_ACCELEROMETER Member=Component AC4

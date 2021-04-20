@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=Net3.3v_4 Pin=C2-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=C3-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=C4-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=C?-1
+Removed Pin From Net: NetName=Net3.3v_1 Pin=C?-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=L1-1
+Removed Member From Class: ClassName=U_Power management Member=C?
+Added Component: Designator=PMC2(CAPC1005X56X25ML10T15)
+Add component (AddParameter): Name = "Manufacturer"; Value = "AVX Interconnect / Elco"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "0402ZD104KAT4A"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Net3.3v_4 Pin=BLE-3
+Added Pin To Net: NetName=Net3.3v_4 Pin=PMC2-1
+Added Pin To Net: NetName=Net3.3v_1 Pin=PMC2-2
+Added Pin To Net: NetName=NetC2_2 Pin=C2-2
+Added Pin To Net: NetName=NetC2_2 Pin=C3-2
+Added Pin To Net: NetName=NetC2_2 Pin=C4-2
+Added Pin To Net: NetName=NetC2_2 Pin=L1-1
+Added Pin To Net: NetName=NetC2_2 Pin=U?-53
+Added Net: Name=NetC2_2
+Added Member To Class: ClassName=U_Power management Member=Component PMC2 0402ZD104KAT4A
+Added Room: Name=U_ACCELEROMETER
+Added Room: Name=U_Charging
+Added Room: Name=U_FLASH_BLE
+Added Room: Name=U_Power management
+Added Room: Name=U_SOC
+Added Room: Name=U_SPEAKER
+Added Room: Name=U_SWD
