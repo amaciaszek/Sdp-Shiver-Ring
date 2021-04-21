@@ -1,0 +1,15 @@
+Replacement for 
+RN73C1E1K13BTG
+https://www.digikey.com/en/products/detail/te-connectivity-passive-product/RP73PF1E1K13BTD/8260866
+
+Replacement for SWD
+https://www.adafruit.com/product/2743?gclid=Cj0KCQjwjPaCBhDkARIsAISZN7Qu6gBdxM7rDOmJOvzoGrUunqNwQcFTw0DKm9AHHlA7Kow6I2XDpzEaAvycEALw_wcB
+
+Replacement for APT1608QBC/D
+https://www.digikey.com/en/products/detail/lite-on-inc/LTST-C194TBKT/2356225
+
+replacement for CR0402-FX-102GLF
+https://www.digikey.com/en/products/detail/yageo/RC0402FR-07102RL/5280805
+
+replacement for ABS07-120-32.768KHZ-T
+https://www.digikey.com/en/products/detail/ndk-america-inc/NX3215SA-32-768K-STD-MUA-14/3125630
