@@ -395,10 +395,12 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_calender -> {
-                // Handle the camera action
+                val calendarIntent = Intent(applicationContext, CalendarActivity::class.java)
+                startActivity(calendarIntent)
             }
-            R.id.nav_smsbluetooth -> {
-                // Do nothing
+            R.id.nav_smsbluetooth-> {
+                val smsIntent = Intent(applicationContext, SMSBluetoothActivity::class.java)
+                startActivity(smsIntent)
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
