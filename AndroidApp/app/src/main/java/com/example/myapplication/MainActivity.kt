@@ -57,7 +57,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // Handle navigation view item clicks here.
             when (item.itemId) {
                     R.id.nav_calender -> {
-                        // Handle the calender action
+                        val calendarIntent = Intent(applicationContext, CalendarActivity::class.java)
+                        startActivity(calendarIntent)
                     }
                     R.id.nav_smsbluetooth-> {
                         val smsIntent = Intent(applicationContext, SMSBluetoothActivity::class.java)
