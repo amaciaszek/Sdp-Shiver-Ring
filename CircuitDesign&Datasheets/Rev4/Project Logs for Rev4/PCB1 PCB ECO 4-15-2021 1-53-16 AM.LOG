@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=Net3.3v_4 Pin=BLE-12
+Removed Pin From Net: NetName=Net3.3v_3 Pin=BLER2-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=BLER-2
+Removed Pin From Net: NetName=NetBLER_1 Pin=BLESW1-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=BLESW2-2
+Removed Pin From Net: NetName=Net3.3v_4 Pin=QSPI-4
+Removed Member From Class: ClassName=U_FLASH_BLE Member=BLER2
+Removed Member From Class: ClassName=U_FLASH_BLE Member=BLESW1
+Removed Member From Class: ClassName=U_FLASH_BLE Member=BLESW2
+Added Pin To Net: NetName=Net3.3v_3 Pin=BLE-11
+Added Pin To Net: NetName=NetBLE_12 Pin=BLE-12
+Added Pin To Net: NetName=NetBLE_12 Pin=BLER-2
+Added Pin To Net: NetName=NetBLE_12 Pin=QSPI-4
+Added Net: Name=NetBLE_12

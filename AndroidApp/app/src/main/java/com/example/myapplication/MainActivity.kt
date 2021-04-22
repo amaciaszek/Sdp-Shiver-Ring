@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             navView.setNavigationItemSelectedListener(this)
         }
 
+
+
         override fun onBackPressed() {
             val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -56,13 +58,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 // Handle navigation view item clicks here.
             when (item.itemId) {
-                    R.id.nav_calender -> {
-                        // Handle the calender action
-                    }
-                    R.id.nav_smsbluetooth-> {
-                        val smsIntent = Intent(applicationContext, SMSBluetoothActivity::class.java)
-                        startActivity(smsIntent)
-                    }
+                R.id.nav_calender -> {
+                    val calendarIntent = Intent(applicationContext, CalendarActivity::class.java)
+                    startActivity(calendarIntent)
+                }
+                R.id.nav_smsbluetooth-> {
+                    val smsIntent = Intent(applicationContext, SMSBluetoothActivity::class.java)
+                    startActivity(smsIntent)
+                }
             }
             val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
             drawerLayout.closeDrawer(GravityCompat.START)

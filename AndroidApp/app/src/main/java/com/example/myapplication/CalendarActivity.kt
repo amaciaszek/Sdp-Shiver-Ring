@@ -1,15 +1,20 @@
 package com.example.myapplication
 
+import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.MotionEvent
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.content_calendar.*
 
 class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -18,8 +23,15 @@ class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val toolbar: Toolbar = findViewById(R.id.toolbar2)
         setSupportActionBar(toolbar)
+
+        //add in how the events are determined
+
+        val eventList = arrayOf(0,1,2,4,5,6,7,8,9,10)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,eventList)
+        listview.adapter = adapter
+
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -36,8 +48,10 @@ class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navView.setNavigationItemSelectedListener(this)
-    }
 
+
+    }
+    
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
@@ -62,9 +76,10 @@ class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_calender -> {
-                // Do nothing
+                val calendarIntent = Intent(applicationContext, CalendarActivity::class.java)
+                startActivity(calendarIntent)
             }
-            R.id.nav_smsbluetooth -> {
+            R.id.nav_smsbluetooth-> {
                 val smsIntent = Intent(applicationContext, SMSBluetoothActivity::class.java)
                 startActivity(smsIntent)
             }

@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=Net3.3v_4 Pin=Accelerometer?-23
+Added Pin To Net: NetName=Net3.3v_4 Pin=AC1-2
+Added Pin To Net: NetName=Net3.3v_4 Pin=AC2-1
+Added Pin To Net: NetName=Net3.3v_4 Pin=AC3-1
+Added Pin To Net: NetName=Net3.3v_4 Pin=Accelerometer?-11
+Added Pin To Net: NetName=NetAccelerometer?_1 Pin=Accelerometer?-1
+Added Pin To Net: NetName=NetAccelerometer?_1 Pin=Accelerometer?-9
+Added Net: Name=NetAccelerometer?_1
+Added Pin To Net: NetName=NetAccelerometer?_23 Pin=Accelerometer?-23
+Added Pin To Net: NetName=NetAccelerometer?_23 Pin=U?-63
+Added Net: Name=NetAccelerometer?_23
+Added Room: Name=U_ACCELEROMETER
+Added Room: Name=U_Charging
+Added Room: Name=U_FLASH_BLE
+Added Room: Name=U_Power management
+Added Room: Name=U_SOC
+Added Room: Name=U_SPEAKER
+Added Room: Name=U_SWD
