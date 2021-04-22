@@ -11,7 +11,7 @@
     <string name="menu_smsbluetooth">SMS + Bluetooth</string>
     <string name="content_main_description">Welcome to Shiver-Ring! \n Please make sure your bluetooth device is connected and charged.</string>
     <string name="button_connect_bluetooth">Connect Bluetooth</string>
-    <string name="button_send_sms">Send SMS</string>
+    <string name="button_send_sms">Test+Save SMS Numbers</string>
     <string name="unknown_device">Device Unknown</string>
     <string name="found_ble_device">Found BLE device</string>
     <string name="found_ble_devices">Found BLE devices</string>

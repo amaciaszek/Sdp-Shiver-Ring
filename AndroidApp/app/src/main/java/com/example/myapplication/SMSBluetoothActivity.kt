@@ -17,6 +17,7 @@ import android.telephony.SmsManager
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -47,6 +48,10 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     val bleCharacteristicUuid = UUID.fromString("0000FFE1-0000-1000-8000-00805F9B34FB")
 
     val CCC_DESCRIPTOR_UUID = "00002902-0000-1000-8000-00805F9B34FB"
+
+    var p1 = ""
+    var p2 = ""
+    var p3 = ""
 
     val SMSMan:SmsManager = SmsManager.getDefault()
 
@@ -84,6 +89,7 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         }
 
     //private var mScanning: Boolean = false
+
 
     private val scanResults = mutableListOf<ScanResult>()
     private val scanResultAdapter: ScanResultAdapter by lazy {
@@ -155,7 +161,19 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 
             with(characteristic) {
                 Log.i("BluetoothGattCallback", "Characteristic $uuid changed | value: ${value.toHexString()}")
-                SMSMan.sendTextMessage("17818030014", null, "EMERGENCY! Shiver-Ring has detected a dangerous situation. \n Please check on ", null,null) // Noh'
+
+//                val p1 = sharedPref.getString("Emergency-PhoneNum1", "17818030014")
+//                Log.w("PhoneNum1", "Phone1 - $p1")
+//
+//                val p2 = sharedPref.getString("Emergency-PhoneNum2", "17818030014")
+//                Log.w("PhoneNum2", "Phone2 - $p2")
+//
+//                val p3 = sharedPref.getString("Emergency-PhoneNum3", "17818030014")
+//                Log.w("PhoneNum3", "Phone3 - $p3")
+
+                SMSMan.sendTextMessage(p1, null, "EMERGENCY! Shiver-Ring has detected trouble! Please assist the user.", null,null)
+                SMSMan.sendTextMessage(p2, null, "EMERGENCY! Shiver-Ring has detected trouble! Please assist the user.", null,null)
+                SMSMan.sendTextMessage(p3, null, "EMERGENCY! Shiver-Ring has detected trouble! Please assist the user.", null,null)
             }
         }
     }
@@ -212,6 +230,10 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+        val phone1: EditText = findViewById(R.id.editText)
+        val phone2: EditText = findViewById(R.id.editText2)
+        val phone3: EditText = findViewById(R.id.editText3)
+
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -246,7 +268,26 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 
         val sendSMSButton: Button = findViewById(R.id.sms_button)
         sendSMSButton.setOnClickListener{
-            SMSMan.sendTextMessage("17818030014", null, "EMERGENCY! Shiver-Ring has detected a dangerous situation. \n Please check on ", null,null) // Noh's
+            val sharedPref = getSharedPreferences("ShiverRingShared", Context.MODE_PRIVATE)
+            var sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putString("PhoneNum1",phone1.text.toString())
+            sharedPrefEditor.putString("PhoneNum2",phone2.text.toString())
+            sharedPrefEditor.putString("PhoneNum3",phone3.text.toString())
+
+            sharedPrefEditor.apply()
+
+            p1 = sharedPref.getString("PhoneNum1", "17818030014").toString()
+            Log.w("PhoneNum1", "Phone1 - $p1")
+
+            p2 = sharedPref.getString("PhoneNum2", "17818030014").toString()
+            Log.w("PhoneNum2", "Phone2 - $p2")
+
+            p3 = sharedPref.getString("PhoneNum3", "17818030014").toString()
+            Log.w("PhoneNum3", "Phone3 - $p3")
+
+            SMSMan.sendTextMessage(p1, null, "TESTING! Shiver-Ring has been setup.", null,null)
+            SMSMan.sendTextMessage(p2, null, "TESTING! Shiver-Ring has been setup.", null,null)
+            SMSMan.sendTextMessage(p3, null, "TESTING! Shiver-Ring has been setup.", null,null)
         }
         setupRecyclerView()
     }

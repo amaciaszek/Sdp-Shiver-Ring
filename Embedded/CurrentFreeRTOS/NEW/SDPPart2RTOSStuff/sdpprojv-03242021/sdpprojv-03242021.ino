@@ -154,8 +154,8 @@ void printRamFree()
 //*****************************************************************
 static void threadA( void *pvParameters ) 
 {
-  int blocknum = 0;
-  int threshold = 0;
+  int threshold =0;
+  int space =0;
   while(1){
   int N = 1024;
   complexNum* buff_x;
@@ -218,13 +218,20 @@ static void threadA( void *pvParameters )
   delete[] spectrum_out_z;
   delete[] spectrum_out_y;
   SERIAL.println("\nDetection:");
-  blocknum=blocknum+1;
-  if(freqx > 7.7 && freqx < 12.3){threshold=threshold+1;SERIAL.print(" X is bad ");}
-  if(freqy > 7.7 && freqy < 12.3){threshold=threshold+1;SERIAL.print(" Y is bad ");}
-  if(freqz > 7.7 && freqz < 12.3){threshold=threshold+1;SERIAL.print(" Z is bad ");}
-  if(blocknum > 2){blocknum=0;threshold=0;}
-  if(threshold > 4){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
-  //myDelayMs(100);
+  if(freqx > 7.7 && freqx < 12.3){threshold=threshold+1; space=0; SERIAL.print(" X is bad \n");}
+  else{space=space+1;}
+  
+  if(freqy > 7.7 && freqy < 12.3){threshold=threshold+1; space=0; SERIAL.print(" Y is bad \n");}
+  else{space=space+1;}
+  
+  if(freqz > 7.7 && freqz < 12.3){threshold=threshold+1; space=0; SERIAL.print(" Z is bad \n");}
+  else{space=space+1;}
+
+  if(space > 12){threshold = 0;space=0;}
+  
+  if(threshold > 5){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
+  myDelayMs(100);
+  
   }
   
   myDelayMs(500);
@@ -247,7 +254,7 @@ static void threadB( void *pvParameters )
     SERIAL.println("\nEMERGENCY: SENDING ALERTS\n");
   
     Serial1.print("EMERGENCY");
-    myDelayMs(1000);
+    myDelayMs(3000);
     while(Serial1.available())
     {
       SERIAL.print((char)Serial1.read());
