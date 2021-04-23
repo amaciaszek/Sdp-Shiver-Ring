@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.view.GravityCompat
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             toggle.syncState()
             navView.setNavigationItemSelectedListener(this)
         }
-
 
 
         override fun onBackPressed() {

@@ -1,13 +1,14 @@
 package com.example.myapplication
 
-import android.app.Dialog
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.MotionEvent
 import android.widget.ArrayAdapter
+import android.widget.CalendarView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -15,6 +16,12 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.content_calendar.*
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.FileReader
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,14 +32,10 @@ class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         setContentView(R.layout.activity_calendar)
         val toolbar: Toolbar = findViewById(R.id.toolbar2)
         setSupportActionBar(toolbar)
+        val calendar = findViewById<CalendarView>(R.id.calendarView)
 
-        //add in how the events are determined
-
-        val eventList = arrayOf(0,1,2,4,5,6,7,8,9,10)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,eventList)
-        listview.adapter = adapter
-
-
+        //val hasWritePermission = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        //val hasReadPermission = checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val permissionstorequest: MutableList<String> = mutableListOf()
@@ -41,6 +44,44 @@ class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 requestPermissions(permissionstorequest.toTypedArray(), REQUEST_CODE_NEW_FEATURE_PERMISSIONS)
             }
         }
+
+        var path = filesDir
+
+
+
+        val eDate = Date()
+        val datef = SimpleDateFormat("M/d/yyyy")
+        val timef = SimpleDateFormat("H:mm")
+        var filename = SimpleDateFormat("MDYYYY").format(eDate)
+        val date = datef.format(eDate)
+
+
+        var file = File(path,filename)
+        val isnewfile :Boolean = file.createNewFile()
+        val list = file.useLines { it.toList() }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
+        listview.adapter = adapter
+
+
+
+        calendar.setOnDateChangeListener(CalendarView.OnDateChangeListener { _, year, month , day ->
+            val month= month +1
+            val filename = "$month$day$year"
+
+            //var filename = SimpleDateFormat("MDYYYY").format(sdate)
+
+            var file = File(path,filename)
+            val isnewfile :Boolean = file.createNewFile()
+            val list = file.useLines { it.toList() }
+            val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
+            listview.adapter = adapter
+
+
+        })
+
+
+
+
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -51,7 +92,7 @@ class CalendarActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
 
     }
-    
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
