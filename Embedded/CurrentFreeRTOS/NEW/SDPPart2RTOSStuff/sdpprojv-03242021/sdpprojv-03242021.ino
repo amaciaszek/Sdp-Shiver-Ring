@@ -157,80 +157,81 @@ static void threadA( void *pvParameters )
   int threshold =0;
   int space =0;
   while(1){
-  int N = 1024;
-  complexNum* buff_x;
-  buff_x = new complexNum[N];
-  complexNum* buff_y;
-  buff_y = new complexNum[N];
-  complexNum* buff_z;
-  buff_z = new complexNum[N];
-  int start=0;
-  int stops=0;
-  for (int i = 0; i < N; i++) {
-    accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-    buff_x[i]={ax,0.0};
-    buff_y[i]={ay,0.0};
-    buff_z[i]={az,0.0};
-    myDelayMs(4);
-  }
+    int N = 1024;
+    complexNum* buff_x;
+    buff_x = new complexNum[N];
+    complexNum* buff_y;
+    buff_y = new complexNum[N];
+    complexNum* buff_z;
+    buff_z = new complexNum[N];
+    int start=0;
+    int stops=0;
+    for (int i = 0; i < N; i++) {
+      accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+      buff_x[i]={ax,0.0};
+      buff_y[i]={ay,0.0};
+      buff_z[i]={az,0.0};
+      myDelayMs(4);
+    }
+    
+    complexNum* outputs;
+    outputs = new complexNum[N];
+    for(int i = 0; i<N; i++){outputs[i] = buff_x[i];}
+    int* spectrum_out_x;
+    spectrum_out_x = new int[N];
+    int* spectrum_out_y;
+    spectrum_out_y = new int[N];
+    int* spectrum_out_z;
+    spectrum_out_z = new int[N];
+    spectrogram(buff_x, outputs, spectrum_out_x, N);
+    delete[] buff_x;
+    spectrogram(buff_y, outputs, spectrum_out_y, N);
+    delete[] buff_y;
+    spectrogram(buff_z, outputs, spectrum_out_z, N);
+    delete[] buff_z;
+    delete[] outputs;
   
-  complexNum* outputs;
-  outputs = new complexNum[N];
-  for(int i = 0; i<N; i++){outputs[i] = buff_x[i];}
-  int* spectrum_out_x;
-  spectrum_out_x = new int[N];
-  int* spectrum_out_y;
-  spectrum_out_y = new int[N];
-  int* spectrum_out_z;
-  spectrum_out_z = new int[N];
-  spectrogram(buff_x, outputs, spectrum_out_x, N);
-  delete[] buff_x;
-  spectrogram(buff_y, outputs, spectrum_out_y, N);
-  delete[] buff_y;
-  spectrogram(buff_z, outputs, spectrum_out_z, N);
-  delete[] buff_z;
-  delete[] outputs;
-
-  int high_index_x=1;int high_index_y=1;int high_index_z=1;
-  int maxi = N/2+1;
+    int high_index_x=1;int high_index_y=1;int high_index_z=1;
+    int maxi = N/2+1;
+    for(int i = 1; i<maxi; i++){
+      if(spectrum_out_x[i] > spectrum_out_x[high_index_x] && spectrum_out_x[i] >7){high_index_x=i;}
+      if(spectrum_out_y[i] > spectrum_out_y[high_index_y] && spectrum_out_y[i] >7){high_index_y=i;}
+      if(spectrum_out_z[i] > spectrum_out_z[high_index_z] && spectrum_out_z[i] >7){high_index_z=i;}
+    }
+    if(high_index_x >100){high_index_x=1;}
+    if(high_index_y >100){high_index_y=1;}
+    if(high_index_z >100){high_index_z=1;}
+    
+    double freqx = high_index_x*0.19518+0.02465;
+    double freqy = high_index_y*0.19518+0.02465;
+    double freqz = high_index_z*0.19518+0.02465;
   
-  for(int i = 1; i<maxi; i++){
-    if(spectrum_out_x[i] > spectrum_out_x[high_index_x] && spectrum_out_x[i] >7){high_index_x=i;}
-    if(spectrum_out_y[i] > spectrum_out_y[high_index_y] && spectrum_out_y[i] >7){high_index_y=i;}
-    if(spectrum_out_z[i] > spectrum_out_z[high_index_z] && spectrum_out_z[i] >7){high_index_z=i;}
-  }
   
-  if(high_index_x >100){high_index_x=1;}
-  if(high_index_y >100){high_index_y=1;}
-  if(high_index_z >100){high_index_z=1;}
+    SERIAL.print(freqx);
+    SERIAL.print(" , ");
+    SERIAL.print(freqy);
+    SERIAL.print(" , ");
+    SERIAL.print(freqz);
   
-  double freqx = high_index_x*0.19518+0.02465;
-  double freqy = high_index_y*0.19518+0.02465;
-  double freqz = high_index_z*0.19518+0.02465;
-
-  SERIAL.print(freqx);
-  SERIAL.print(" , ");
-  SERIAL.print(freqy);
-  SERIAL.print(" , ");
-  SERIAL.print(freqz);
-
-  delete[] spectrum_out_x;
-  delete[] spectrum_out_z;
-  delete[] spectrum_out_y;
-  SERIAL.println("\nDetection:");
-  if(freqx > 7.7 && freqx < 12.3){threshold=threshold+1; space=0; SERIAL.print(" X is bad \n");}
-  else{space=space+1;}
+    
+    delete[] spectrum_out_x;
+    delete[] spectrum_out_z;
+    delete[] spectrum_out_y;
+    
+    SERIAL.println("\nDetection:");
+    if(freqx > 7.7 && freqx < 12.3){threshold=threshold+1; space=0; SERIAL.print(" X is bad \n");}
+    else{space=space+1;}
+    
+    if(freqy > 7.7 && freqy < 12.3){threshold=threshold+1; space=0; SERIAL.print(" Y is bad \n");}
+    else{space=space+1;}
+    
+    if(freqz > 7.7 && freqz < 12.3){threshold=threshold+1; space=0; SERIAL.print(" Z is bad \n");}
+    else{space=space+1;}
   
-  if(freqy > 7.7 && freqy < 12.3){threshold=threshold+1; space=0; SERIAL.print(" Y is bad \n");}
-  else{space=space+1;}
-  
-  if(freqz > 7.7 && freqz < 12.3){threshold=threshold+1; space=0; SERIAL.print(" Z is bad \n");}
-  else{space=space+1;}
-
-  if(space > 12){threshold = 0;space=0;}
-  
-  if(threshold > 5){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
-  myDelayMs(100);
+    if(space > 12){threshold = 0;space=0;}
+    
+    if(threshold > 5){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
+    myDelayMs(100);
   }
   
   myDelayMs(500);
@@ -248,38 +249,18 @@ static void threadB( void *pvParameters )
 {
   while(1)
   {
-    if(sendEmergencyText==true)
-    {
-    SERIAL.println("\nEMERGENCY: SENDING ALERTS\n");
-  
-    Serial1.print("EMERGENCY");
-    myDelayMs(3000);
-    while(Serial1.available())
-    {
-      SERIAL.print((char)Serial1.read());
+    if(sendEmergencyText==true){
+      SERIAL.println("\nEMERGENCY: SENDING ALERTS\n");
+    
+      Serial1.print("EMERGENCY");
+      myDelayMs(3000);
+      while(Serial1.available()){
+        SERIAL.print((char)Serial1.read());
+      }
+      SERIAL.print("\n");
+      sendEmergencyText=false;                                         
     }
-    SERIAL.print("\n");
-    sendEmergencyText=false;
-    //  SERIAL.println(Serial1.print("AT"));
-    //  delay(1000);
-    //  while(Serial1.available())        // Disconnect phone if connected, or basic test of device AT Command
-    //  {
-    //    SERIAL.print((char)Serial1.read());
-    //  }
-    //  SERIAL.print("\n");
-      
-    //  SERIAL.println(Serial1.print("WAKE\r\n"));   //  SERIAL.println(Serial1.print("AT+MODE?"));   //  SERIAL.println(Serial1.print("AT+TYPE?"));
-    //  delay(200);
-    //  SERIAL.println(Serial1.print("AT+NAME?"));
-    //  delay(500);                   // Get name of device, can be used in future to rename
-    //  while(Serial1.available())
-    //  {
-    //    SERIAL.print((char)Serial1.read());
-    //  }
-    //  SERIAL.print("\n");                                               
-    }
-    else
-    {
+    else{
       SERIAL.println("NOEVENT");
     }
     myDelayMs(1000);
@@ -292,6 +273,7 @@ static void threadB( void *pvParameters )
 static void threadC( void *pvParameters ){
   int msresetcount=0;
   int msalarmcount=0;
+  int buttonState=HIGH;
  
   myDelayMs(2000);
  
@@ -303,8 +285,8 @@ static void threadC( void *pvParameters ){
        digitalWrite(7, HIGH);   // turn the LED on (HIGH is the voltage level)
        while(raiseAlarm == true)
        {
-          int buttonState = digitalRead(6);
-          if(buttonState == HIGH){
+          buttonState=digitalRead(6);
+          if(buttonState == LOW){
             msresetcount = msresetcount + 1;
             msalarmcount = msalarmcount + 1;
             myDelayMs(1);
@@ -422,9 +404,6 @@ void setup()
   pinMode(7, OUTPUT);
   pinMode(6, INPUT);
   
-  // show the amount of ram free at startup
-  /*printRamFree();*/
-  
   SERIAL.println("");
   SERIAL.println("******************************");
   SERIAL.println("        Program start         ");
@@ -451,10 +430,6 @@ void setup()
   xTaskCreate(threadA,     "Task A",       1512, NULL, tskIDLE_PRIORITY + 3, &Handle_aTask);
   xTaskCreate(threadB,     "Task B",       256, NULL, tskIDLE_PRIORITY + 2, &Handle_bTask);
   xTaskCreate(threadC,     "Task C",       256, NULL, tskIDLE_PRIORITY + 1, &Handle_cTask);
-  /*xTaskCreate(taskMonitor, "Task Monitor", 256, NULL, tskIDLE_PRIORITY + 1, &Handle_monitorTask);*/
-
-  // show the amount of ram free after initializations
-  /*printRamFree();*/
 
   // Start the RTOS, this function will never return and will schedule the tasks.
   vTaskStartScheduler();
@@ -476,9 +451,8 @@ void setup()
 //*****************************************************************
 void loop() 
 {
-  // Optional commands, can comment/uncomment below
-  //SERIAL.print("."); //print out dots in terminal, we only do this when the RTOS is in the idle state
+  //SERIAL.print(".");
   SERIAL.flush();      
-  delay(100); //delay is interrupt friendly, unlike vNopDelayMS
+  delay(100);
 }
 //*****************************************************************
