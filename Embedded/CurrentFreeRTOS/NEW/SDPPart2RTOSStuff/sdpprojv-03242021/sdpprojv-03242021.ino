@@ -294,6 +294,7 @@ static void threadB( void *pvParameters )
 static void threadC( void *pvParameters ){
   int msresetcount=0;
   int msalarmcount=0;
+  int buttonState=HIGH;
  
   myDelayMs(2000);
  
@@ -305,8 +306,8 @@ static void threadC( void *pvParameters ){
        digitalWrite(7, HIGH);   // turn the LED on (HIGH is the voltage level)
        while(raiseAlarm == true)
        {
-          int buttonState = digitalRead(6);
-          if(buttonState == HIGH){
+          buttonState=digitalRead(6);
+          if(buttonState == LOW){
             msresetcount = msresetcount + 1;
             msalarmcount = msalarmcount + 1;
             myDelayMs(1);
