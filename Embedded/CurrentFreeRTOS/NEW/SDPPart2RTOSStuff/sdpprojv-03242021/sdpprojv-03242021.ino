@@ -193,11 +193,13 @@ static void threadA( void *pvParameters )
 
   int high_index_x=1;int high_index_y=1;int high_index_z=1;
   int maxi = N/2+1;
+  
   for(int i = 1; i<maxi; i++){
     if(spectrum_out_x[i] > spectrum_out_x[high_index_x] && spectrum_out_x[i] >7){high_index_x=i;}
     if(spectrum_out_y[i] > spectrum_out_y[high_index_y] && spectrum_out_y[i] >7){high_index_y=i;}
     if(spectrum_out_z[i] > spectrum_out_z[high_index_z] && spectrum_out_z[i] >7){high_index_z=i;}
   }
+  
   if(high_index_x >100){high_index_x=1;}
   if(high_index_y >100){high_index_y=1;}
   if(high_index_z >100){high_index_z=1;}
@@ -206,14 +208,12 @@ static void threadA( void *pvParameters )
   double freqy = high_index_y*0.19518+0.02465;
   double freqz = high_index_z*0.19518+0.02465;
 
-
   SERIAL.print(freqx);
   SERIAL.print(" , ");
   SERIAL.print(freqy);
   SERIAL.print(" , ");
   SERIAL.print(freqz);
 
-  
   delete[] spectrum_out_x;
   delete[] spectrum_out_z;
   delete[] spectrum_out_y;
@@ -231,7 +231,6 @@ static void threadA( void *pvParameters )
   
   if(threshold > 5){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
   myDelayMs(100);
-  
   }
   
   myDelayMs(500);
@@ -261,24 +260,23 @@ static void threadB( void *pvParameters )
     }
     SERIAL.print("\n");
     sendEmergencyText=false;
-                                                    //  SERIAL.println(Serial1.print("AT"));
-                                                    //  delay(1000);
-                                                    //  while(Serial1.available())        // Disconnect phone if connected, or basic test of device AT Command
-                                                    //  {
-                                                    //    SERIAL.print((char)Serial1.read());
-                                                    //  }
-                                                    //  SERIAL.print("\n");
-                                                      
-                                                    //  SERIAL.println(Serial1.print("WAKE\r\n"));   //  SERIAL.println(Serial1.print("AT+MODE?"));   //  SERIAL.println(Serial1.print("AT+TYPE?"));
-                                                    //  delay(200);
-                                                    //  SERIAL.println(Serial1.print("AT+NAME?"));
-                                                    //  delay(500);                   // Get name of device, can be used in future to rename
-                                                    //  while(Serial1.available())
-                                                    //  {
-                                                    //    SERIAL.print((char)Serial1.read());
-                                                    //  }
-                                                    //  SERIAL.print("\n");
-                                                    
+    //  SERIAL.println(Serial1.print("AT"));
+    //  delay(1000);
+    //  while(Serial1.available())        // Disconnect phone if connected, or basic test of device AT Command
+    //  {
+    //    SERIAL.print((char)Serial1.read());
+    //  }
+    //  SERIAL.print("\n");
+      
+    //  SERIAL.println(Serial1.print("WAKE\r\n"));   //  SERIAL.println(Serial1.print("AT+MODE?"));   //  SERIAL.println(Serial1.print("AT+TYPE?"));
+    //  delay(200);
+    //  SERIAL.println(Serial1.print("AT+NAME?"));
+    //  delay(500);                   // Get name of device, can be used in future to rename
+    //  while(Serial1.available())
+    //  {
+    //    SERIAL.print((char)Serial1.read());
+    //  }
+    //  SERIAL.print("\n");                                               
     }
     else
     {
@@ -479,7 +477,7 @@ void setup()
 void loop() 
 {
   // Optional commands, can comment/uncomment below
-  SERIAL.print("."); //print out dots in terminal, we only do this when the RTOS is in the idle state
+  //SERIAL.print("."); //print out dots in terminal, we only do this when the RTOS is in the idle state
   SERIAL.flush();      
   delay(100); //delay is interrupt friendly, unlike vNopDelayMS
 }
