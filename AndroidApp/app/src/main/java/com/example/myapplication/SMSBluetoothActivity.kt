@@ -27,7 +27,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.content_calendar.*
 import kotlinx.android.synthetic.main.content_smsbluetooth.*
+import java.io.File
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -170,6 +174,35 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 //
 //                val p3 = sharedPref.getString("Emergency-PhoneNum3", "17818030014")
 //                Log.w("PhoneNum3", "Phone3 - $p3")
+                val eDate = Date()
+                val datef = SimpleDateFormat("M/d/yyyy")
+                val timef = SimpleDateFormat("H:mm")
+                val date = datef.format(eDate)
+                val time = timef.format(eDate)
+
+                var filename = SimpleDateFormat("MDYYYY").format(eDate)
+                var path = filesDir
+                var newfile= File(path,filename)
+                val isnewfile :Boolean = newfile.createNewFile()
+                if (isnewfile){
+                    openFileOutput(filename, Context.MODE_PRIVATE).use{
+                        it.write(time.toByteArray())
+                    }
+                }else{
+                    //open the file as a list
+                    var list = File(path,filename).useLines { it.toList() }
+                    list+=time
+
+                }
+
+
+
+
+                //Write data to file
+                openFileOutput(filename, Context.MODE_PRIVATE).use{
+                    it.write(date.toByteArray())
+                }
+
 
                 SMSMan.sendTextMessage(p1, null, "EMERGENCY! Shiver-Ring has detected trouble! Please assist the user.", null,null)
                 SMSMan.sendTextMessage(p2, null, "EMERGENCY! Shiver-Ring has detected trouble! Please assist the user.", null,null)
@@ -245,8 +278,9 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT)
         }
-
-
+        var file = File(filesDir,"contacts")
+        val isnew :Boolean = file.createNewFile()
+        val contacts = file.useLines { it.toString().toList() }
         val connectBluetoothButton: Button = findViewById(R.id.connect_bluetooth_button)
         connectBluetoothButton.setOnClickListener{
             if (bluetoothAdapter.isEnabled) {
@@ -288,6 +322,11 @@ class SMSBluetoothActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             SMSMan.sendTextMessage(p1, null, "TESTING! Shiver-Ring has been setup.", null,null)
             SMSMan.sendTextMessage(p2, null, "TESTING! Shiver-Ring has been setup.", null,null)
             SMSMan.sendTextMessage(p3, null, "TESTING! Shiver-Ring has been setup.", null,null)
+            val contacts = arrayListOf<String>(p1,p2,p3)
+            var file = File(filesDir,"contacts")
+            val isnew :Boolean = file.createNewFile()
+            openFileOutput("contacts", Context.MODE_PRIVATE).use{
+                it.write(contacts.toString().toByteArray())}
         }
         setupRecyclerView()
     }
