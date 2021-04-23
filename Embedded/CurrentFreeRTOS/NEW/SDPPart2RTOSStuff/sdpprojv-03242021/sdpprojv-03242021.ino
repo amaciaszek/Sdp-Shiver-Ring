@@ -230,7 +230,7 @@ static void threadA( void *pvParameters )
   
     if(space > 12){threshold = 0;space=0;}
     
-    if(threshold > 5){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
+    if(threshold > 4){raiseAlarm=true; threshold=0;SERIAL.print(" Alarm Raised! ");}
     myDelayMs(100);
   }
   
